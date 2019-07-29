@@ -7,8 +7,9 @@
  */
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
+#define ELEMENT_SIZE 20
 typedef struct Data {
-    char content[20];      // 스택 내용
+    char content[ELEMENT_SIZE];      // 스택 내용
 }Data;
 
 typedef struct Stack{
@@ -24,7 +25,7 @@ Stack* makeStack(Stack* stack, const int maxsize);
 _Bool push(Stack* stack, const char* content, const int currentsize);
 
 // 최상위에 위치한 원소 제거
-Stack* pop(Stack* stack);
+_Bool pop(Stack* stack);
 
 // 최상위에 위치한 원소 반환
 char* peek(const Stack* stack);
